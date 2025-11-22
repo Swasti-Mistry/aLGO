@@ -6,7 +6,7 @@
     <title>Text Encoder/Decoder Algorithm</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Times New Roman, serif;
             line-height: 1.6;
             margin: 0;
             padding: 20px;
@@ -53,30 +53,32 @@
         
         <div class="algorithm">
             <div class="algorithm-title">[H] Text Encoding Algorithm</div>
-            <div class="algorithm-content">[1] EncodeText(S, K)
-    E ← ""
-    for i = 1 to length(S) do
+            <div class="algorithm-content">[1] procedure EncodeText(S, K)
+    <i>E ← ""</i>
+    <b>for</b><i> i = 1 to length(S) <b>do</b>
         C ← characterCode(S[i])
         K_idx ← (i-1) mod length(K)
         K_char ← characterCode(K[K_idx])
         E_char ← C ⊕ K_char
-        E ← E + stringFromCharCode(E_char)
-    end for
-    return E</div>
+        E ← E + stringFromCharCode(E_char)</i>
+    <b>end for</b>
+    <b>return</b> <i>E</i>
+<b>end procedure</b></div>
         </div>
         
         <div class="algorithm">
             <div class="algorithm-title">[H] Text Decoding Algorithm</div>
-            <div class="algorithm-content">[1] DecodeText(E, K)
-    D ← ""
-    for i = 1 to length(E) do
+            <div class="algorithm-content">[1] procedure DecodeText(E, K)
+    <i>D ← ""</i>
+    <b>for<b/> <i>i = 1 to length(E) <b>do</b>
         E_char ← characterCode(E[i])
         K_idx ← (i-1) mod length(K)
         K_char ← characterCode(K[K_idx])
         D_char ← E_char ⊕ K_char
-        D ← D + stringFromCharCode(D_char)
-    end for
-    return D</div>
+        D ← D + stringFromCharCode(D_char)</i>
+    <b>end for</b>
+    return D
+<b>end procedure</b></div>
         </div>
     </div>
 </body>
